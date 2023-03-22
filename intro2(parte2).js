@@ -146,7 +146,7 @@
 
 // scrivi un ciclo che parta da 10 torni a 0 e torni a 10
 
-// for(let number=10; number => 0; number){
+// for(let number=10; number => 0; number--){
 //     console.log(number)
 // }
 // for(let number=1; number <= 10; number++){
