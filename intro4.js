@@ -53,26 +53,89 @@ let pippo = [15, 3, 23, 34, 21];
 
 
 // (1) Scrivere una funzione che prenda come parametro un Array di numeri e fa console.log dei numeri con la logica FizzBuzz.
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-function FizzBuzz(numbers){
-    for (let i = 0; i < numbers.length; i++) {
-        const element = numbers[i];
-        if(element % 3 === 0 && element % 5 === 0){
-        return "FizzBuzz";
-        }else if(element % 3 === 0){
-            return "Fizz";
-        }else if(element % 5 === 0){
-            return "Buzz";
-        }
-        return element;
-        }
-        
 
-    }console.log(FizzBuzz[numbers]);
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+// function FizzBuzz(numbers){
+//     for (let i = 0; i < numbers.length; i++) {
+//         const element = numbers [i];
+//     if (element % 3 === 0, element % 5 === 0) {
+//         console.log("FizzBuzz");
+//     } else if (element % 3 == 0) {
+//         console.log("Fizz");
+//     } else if (element % 5 == 0) {
+//         console.log("Buzz");
+//     } else{
+//         console.log(element);
+//     }
+// }   
+// } 
+// FizzBuzz(numbers);
+
+
+
 
 // (2) Scrivere una funzione che prenda come parametro un Array di stringhe e logga quelle più piccole di 5 caratteri.
-// (3) Scrivere una funzione che prenda come parametro una stringa e restituisce una stringa composta dai primi 5 caratteri convertiti in maiuscolo ,
+
+
+// const words = ["Pippo", "paperino", "pluto", "ciao", "boh", "non", "so", "cosa", "scrivere"]
+
+// function smallWords(text){
+//     for (let i = 0; i < words.length; i++) {
+//         let element = words[i];
+//     if(element.length < 5){
+//         console.log(element);
+//     }
+        
+//     }
+// } smallWords(words);
+
+
+
+
+// (3) Scrivere una funzione che prenda come parametro una stringa e restituisce una stringa composta dai primi 5 caratteri convertiti in maiuscolo.
+
+
+// function fiveCharsUpperCase(text){
+//     text = text.toUpperCase();
+//     return text;    
+// }
+
+// let newText ="";
+// function firstFiveChars(text){
+//     for (let i = 0; i < 5; i++) {
+//         const element = fiveCharsUpperCase(text[i]);
+//         newText += element;
+        
+//     } return newText;
+
+
+// } console.log(firstFiveChars("tomareomo"))
+
+
 // (4) Scrivere una funzione che prenda come paramentro una stringa e restituisca la lunghezza della stringa senza spazi.
+
+
+// function stringLengthNoSpaces(randomWord){
+//     let count = 0;
+//     for (let i = 0; i < randomWord.length; i++) {
+//         if(randomWord[i] !== " "){
+//             count++
+//         }
+//     }return count;
+// } console.log(stringLengthNoSpaces("c         iao"));
+
+
+
 // (5) Scrivere una funzione che prenda come paramentro una stringa e restituisca il numero degli spazi.
+
+
+// function stringLengthNoSpaces(randomWord){
+//     let count = 0;
+//     for (let i = 0; i < randomWord.length; i++) {
+//         if(randomWord[i] === " "){
+//             count++
+//         }
+//     }return count;
+// } console.log(stringLengthNoSpaces("c iao"));
 
 
