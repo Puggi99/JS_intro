@@ -203,7 +203,147 @@
 
 // (2° metodo)
 
-function elevazioneAPotenzaConDefault(base,esponente=2){
-    const risultato = base ** esponente;
-    return risultato;
-}console.log(elevazioneAPotenzaConDefault(3))
+// function elevazioneAPotenzaConDefault(base,esponente=2){
+//     const risultato = base ** esponente;
+//     return risultato;
+// }console.log(elevazioneAPotenzaConDefault(3))
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Le funzioni possono utilizzare altre funzioni
+
+// function doubleAndPow3(selectedNumber){
+//     const double = selectedNumber *2;
+//     const pow3   = double ** 3;
+//     return pow3;
+    // const double = makeDouble(selectedNumber);
+    // const pow3 = makePow3(double);
+    // return pow3;
+// } 
+// console.log(doubleAndPow3(2));
+// console.log(doubleAndPow3(3));
+
+
+// posso spezzare questa funzione in sotto-funzioni
+
+// function makeDouble(selectedNumber){
+//     return selectedNumber * 2;
+// }
+
+// function makePow3(selectedNumber){
+//     return selectedNumber ** 3;
+// }
+
+
+// return makePow3(makeDouble(selectedNumber))
+
+
+
+// le funzioni possono avere delle funzioni al loro interno
+
+// function ifMoreThanTenCharsUpperCase(text){
+//     function ifMoreThanTenCharInside(textToCheck){
+//         return textToCheck.length > 10;
+//     }
+    
+//     if(ifMoreThanTenCharInside(text)){
+//         return text.toUpperCase();
+//     }else{
+//         return text;
+//     }
+// }
+
+
+// console.log(ifMoreThanTenCharsUpperCase("tuo padre non è in forma"))
+
+
+// La ricorsione è un caso delle funzioni che utilizzano altre funzioni, ma la ricorsione utilizza sé stessa
+
+// ESEMPIO 1
+
+// function sumRangeRecursive(startNumber, endNumber, accumulator = 0){                                 // c'è bisogno di un termine aggiuntivo, in questo caso chiamato "accumulator"
+//     if(startNumber>endNumber){
+//         return accumulator
+//     }
+//     const newStart = startNumber + 1;
+//     const newAccumulator = accumulator + startNumber;
+//     return sumRangeRecursive(newStart, endNumber, newAccumulator)                                                                                    
+// }
+
+//  console.log(sumRangeRecursive(0,3)); // 6
+//  console.log(sumRangeRecursive(1,3)); // 6
+//  console.log(sumRangeRecursive(1,5)); // 15
+//  console.log(sumRangeRecursive(2,6)); // 20
+ 
+
+// Fasi di elaborazione:
+
+// 1. startNumber = 0; endNumber = 3; accumulator 0 -> newStart = 1; endNumber = 3; newAccumulator = 0
+// 2. startNumber = 1; endNumber = 3; accumulator 0 -> newStart = 2; endNumber = 3; newAccumulator = 1
+// 3. startNumber = 2; endNumber = 3; accumulator 1 -> newStart = 3; endNumber = 3; newAccumulator = 3
+// 4. startNumber = 3; endNumber = 3; accumulator 3 -> newStart = 4; endNumber = 3; newAccumulator = 6
+// 5. startNumber = 4; endNumber = 3; accumulator 6 -> startNumber(4) è maggiore di endNumber(3) e quindi la funzione entra nella parte di "if", facendo return accumulator(6)
+
+// "If" è il punto di uscita necessario in ogni Ricorsiva per uscire da questo loop, senza di esso andrebbe all'infinito
+
+
+
+// ESEMPIO 2 (Esercizio 2 del Capitolo 3 di EloquentJavaScript)
+
+
+// function isEven(selectedNumber){
+//     if(selectedNumber === 0){
+//         return true;
+//     }
+    
+//     if(selectedNumber === 1){
+//         return false;
+//     }
+
+//     const newNumber = selectedNumber -2;
+//     return isEven(newNumber);
+// }
+
+// console.log(isEven(0));  //true
+// console.log(isEven(1));  //false
+// console.log(isEven(3));  //false
+// console.log(isEven(8));  //true
+
+
+
+// ESEMPIO 3 (con due funzioni)                             CONTROLLARE REPOSITORY DI ANDREA PERCHE' IL CODICE è SBAGLIATO
+
+// function isMyNumberOdd(selectedNumber){
+//     if(selectedNumber === 0){
+//         return false;
+//     }
+//     if(selectedNumber === 1){
+//         return true;
+//     }
+//     const newNumber = selectedNumber -2;
+// }
+
+// function isMyNumberEven(selectedNumber){
+//     if(selectedNumber === 0){
+//         return true;
+//     }
+//     if(selectedNumber === 1){
+//         return false;
+//     }
+//     const newNumber = selectedNumber -2;
+//     return isMyNumberOdd(newNumber)
+      
+// }
+
+
+// console.log(isMyNumberEven(0));  //true
+// console.log(isMyNumberEven(1));  //false
+// console.log(isMyNumberEven(3));  //false
+// console.log(isMyNumberEven(8));  //true
+
+
+
