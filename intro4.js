@@ -139,3 +139,67 @@ let pippo = [15, 3, 23, 34, 21];
 // } console.log(stringLengthNoSpaces("c iao"));
 
 
+
+// ESERCIZIO 3 CAPITOLO 3 DI ELOQUENT JAVA SCRIPT
+
+// const bbc = "BBC";
+// const weirdWord = "kakkerlak";
+
+// function countBs(text){
+//     let count = 0;
+//     for (let i = 0; i < text.length; i++) {
+//         const element = text[i];
+//         if(element === "B"){
+//             count++
+//         }
+//     }return count;
+// }console.log(countBs(bbc));
+
+
+// function countK(text){
+//     let count = 0;
+//     for (let i = 0; i < text.length; i++) {
+//         const element = text[i];
+//         if(element === "k"){
+//             count++
+//         }
+//     }return count;
+// }console.log(countK(weirdWord));
+
+
+
+
+// CORREGGERE PROBLEMATICA FUNZIONE CON NUMERI NEGATIVI
+function isMyNumberNegative(selectedNumber){
+    if(selectedNumber < 0){
+        selectedNumber *= -1;
+    
+    }const newNumber = selectedNumber;
+     return !isMyNumberOdd(newNumber); 
+}
+
+function isMyNumberEven(selectedNumber){
+    if(selectedNumber === 0){
+        return true;
+    }
+    if (selectedNumber === 1) {
+        return false;
+    }
+    const newNumber = selectedNumber - 2
+    return !isMyNumberNegative(newNumber); 
+}
+
+
+function isMyNumberOdd(selectedNumber){
+    if(selectedNumber === 0){
+        return false;
+    }
+    if (selectedNumber === 1) {
+        return true;
+    }
+    const newNumber = selectedNumber - 2
+    return !isMyNumberEven(newNumber); 
+};
+
+console.log(isMyNumberEven(3)); //false
+console.log(isMyNumberOdd(-2)); //true

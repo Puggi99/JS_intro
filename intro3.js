@@ -315,35 +315,32 @@
 
 
 
-// ESEMPIO 3 (con due funzioni)                             CONTROLLARE REPOSITORY DI ANDREA PERCHE' IL CODICE è SBAGLIATO
-
-// function isMyNumberOdd(selectedNumber){
-//     if(selectedNumber === 0){
-//         return false;
-//     }
-//     if(selectedNumber === 1){
-//         return true;
-//     }
-//     const newNumber = selectedNumber -2;
-// }
+// ESEMPIO 3 (con due funzioni)                  
 
 // function isMyNumberEven(selectedNumber){
 //     if(selectedNumber === 0){
 //         return true;
 //     }
-//     if(selectedNumber === 1){
+//     if (selectedNumber === 1) {
 //         return false;
 //     }
-//     const newNumber = selectedNumber -2;
-//     return isMyNumberOdd(newNumber)
-      
+//     const newNumber = selectedNumber - 2
+//     return !isMyNumberOdd(newNumber); 
 // }
 
 
-// console.log(isMyNumberEven(0));  //true
-// console.log(isMyNumberEven(1));  //false
-// console.log(isMyNumberEven(3));  //false
-// console.log(isMyNumberEven(8));  //true
+// function isMyNumberOdd(selectedNumber){
+//     if(selectedNumber === 0){
+//         return false;
+//     }
+//     if (selectedNumber === 1) {
+//         return true;
+//     }
+//     const newNumber = selectedNumber - 2
+//     return !isMyNumberEven(newNumber); 
+// };
 
+// console.log(isMyNumberEven(3)); //false
+// console.log(isMyNumberOdd(3)); //true
 
 
