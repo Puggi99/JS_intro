@@ -466,20 +466,187 @@
 //                                                                      ESERCIZI
 
 //(1) Scrivere una funzione che prende in input un array di numeri e restituisce un array di stringhe in logica fizzBuzz
-const numbers = [3,5,15,8,12,2]
-function convertiArrayInFizzBuzz(array){
 
-}
+// const numbers = [3, 5, 15, 8, 12, 2];
 
-console.log(convertiArrayInFizzBuzz(array)); // ['Fizz','Buzz','FizzBuzz','8','Fizz','2']
+// function convertArrayInFizzBuzz(array){
+//     let newNumber = [];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if(element % 3 === 0 && element % 5 === 0){
+//             newNumber.push("FizzBuzz");
+//         }else if(element % 3 === 0){
+//             newNumber.push("Fizz");
+//         }else if(element % 5 === 0){
+//             newNumber.push("Buzz")
+//         }else{
+//             newNumber.push(element)
+//         } 
+//     }return newNumber;
+// }
+
+// console.log(convertArrayInFizzBuzz(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
+
+
+
 //(2) Scrivere una funzione che prende in input un array di numeri e restituisce un array di numeri in cui i positivi sono trasformati in negativi e viceversa
-const numbers = [-3,5,15,-8,12,2,0]
-function invertiElements(array){
+const numbers1 = [-3, 5, 15, -8, 12, 2, 0];
 
+function invertElements(array){
+    let newNumber = [];
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if(element < 0){
+            element = element * -1;
+            newNumber.push(element);
+        }else if(element > 0){
+            element = element * -1;
+            newNumber.push(element);
+        }else{
+            newNumber.push(element)
+        }
+
+}return newNumber;
 }
-console.log(invertiElements(numbers)); // [3,-5,-15,8,-12,-2,0]
+console.log(invertElements(numbers1)) //[3, -5, -15, 8, -12, -2, 0]
+
 //(3) Scrivere una funzione che prende in input un array di stringhe e restuisce un array di numeri con la lunghezza delle stringhe 
+
+const strings = ['pippo', 'pluto', 'qui'];
+
+function lengthOfElements(array){
+    let lengthOfStringsArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        lengthOfStringsArray.push(element.length);
+        
+    }
+    return lengthOfStringsArray;
+}
+
+console.log(lengthOfElements(strings)) //[5, 5, 3]
+
 //(4) Scrivere una funzione che prende in input un array di stringhe e restisuice solo quelle che contengono la lettera z
+
+const strings2 = ['pippo', 'pluto', 'qui', 'zapotec'];
+
+function onlyElementsWithZ(array){
+    let elementWithZ =[];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if(!element.indexOf('z')){
+            elementWithZ.push(element)
+        }
+    }
+    return elementWithZ;
+}
+
+console.log(onlyElementsWithZ(strings2)) //['zapotec']
+
 //(5) Scrivere una funzione che prende in input un array di numeri e restituisce tutti i numeri pari 
+
+const numbers2 = [-3, 5, 15, -8, 12, 2, 0];
+
+function onlyEven(array){
+    let evenNumbers = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if(element % 2 === 0){
+            evenNumbers.push(element)
+        }
+    }
+    return evenNumbers;
+}
+
+console.log(onlyEven(numbers2)) //[8, -12, -2, 0]
+
 //(6) Scrivere una funzione che dato un array di stringhe restituisca una stringa composta dalle iniziali 
+
+const strings3 = ['pippo', 'osvaldo', 'paperino'];
+
+function sumFirstChar(array){
+    let onlyStartingLetter = "";
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        onlyStartingLetter += element[0]
+    }
+    return onlyStartingLetter;
+}
+
+console.log(sumFirstChar(strings3)) //'pop'
+
 //(7) Scrivere una funzione che prende un array di numeri e restituisce il maggiore 
+
+const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
+
+function maxElement(array){
+    let maxNumber = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if(element > maxNumber){
+            maxNumber = element;
+        }
+    }
+    return maxNumber;
+}
+
+console.log(maxElement(numbers3)) //15
+
+
+// ESERCIZI SUL LIBRO CAP 4
+
+//(1)
+function range (start, end){
+    let numbers = []
+    for (let i = 1; i <= end; i++) {
+        const element = i
+        numbers.push(element);
+        
+    }return numbers;
+}
+console.log(range(1, 10)); // → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function sum(array){
+    let summedNumber = 0;
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        summedNumber += element;
+        
+    }return summedNumber;
+}
+
+console.log(sum(range(1, 10))); // → 55
+
+// console.log(range(5, 2, -1)); // → [5, 4, 3, 2]
+
+
+
+// (2)
+
+let arrayOfStrings = ["A", "B", "C"];
+let arrayOfNumbers = [1, 2, 3, 4, 5];
+
+function reverseArray(array){
+    let reversedString = [];
+    for (let i = array.length -1; i>= 0 ; i--) {
+        const element = array[i];
+        reversedString.push(element)
+        
+    }return reversedString
+}
+console.log(reverseArray(arrayOfStrings));
+
+function reverseArrayInPlace(array){
+    let newOrder =[]
+    let places = array.length -1;
+    for (let i = 0; i < array.length; i++) {
+        const element = array[places];
+        newOrder.push(element);
+        places--
+    }return newOrder;
+}
+console.log(reverseArrayInPlace(arrayOfNumbers));
+
+
+
+
