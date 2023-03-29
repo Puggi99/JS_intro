@@ -300,7 +300,7 @@
 // TUTTI I CICLI IN JAVASCRIPT
 // WHILE
 
-const numbers = [9,8,7,1,2,3]
+// const numbers = [9,8,7,1,2,3]
 // let i = 0;
 // while (i < numbers.length){
 //     const element = numbers[i];
@@ -335,33 +335,127 @@ const numbers = [9,8,7,1,2,3]
 
 // FOR EACH
 
-numbers.forEach((element) => console.log(element));
+// numbers.forEach((element) => console.log(element));
 
 
-// MAP
-numbers.map((element) => console.log(element *2));
-// FILTER
-numbers.filter((element)=> console.log(element % 2 === 0));
-// REDUCE
-numbers.reduce((previousElement, currentElement)=> previousElement + currentElement, 0);                   // lo 0 nella reduce è il valore iniziale
+// // MAP
+// numbers.map((element) => console.log(element *2));
+// // FILTER
+// numbers.filter((element)=> console.log(element % 2 === 0));
+// // REDUCE
+// numbers.reduce((previousElement, currentElement)=> previousElement + currentElement, 0);                   // lo 0 nella reduce è il valore iniziale
 
-const strings = ['qui','quo','qua']
-strings.reduce((previousElement,currentElement) => previousElement + currentElement, '');
+// const strings = ['qui','quo','qua']
+// strings.reduce((previousElement,currentElement) => previousElement + currentElement, '');
 
-// FOR IN 
-// cicla gli oggetti
+// // FOR IN 
+// // cicla gli oggetti
 
-const Andrea = {
-    name: 'Andrea',
-    surname: 'Asioli',
-    hasADog: true,
-    yob: 1978,
-}
+// const Andrea = {
+//     name: 'Andrea',
+//     surname: 'Asioli',
+//     hasADog: true,
+//     yob: 1978,
+// }
 
-for (const key in Andrea) {
-    if (Object.hasOwnProperty.call(Andrea, key)) {
-        const value = Andrea[key];
-        console.log(`Andrea ha la proprietà ${key} associata al valore ${value}`)
-    }
-}
+// for (const key in Andrea) {
+//     if (Object.hasOwnProperty.call(Andrea, key)) {
+//         const value = Andrea[key];
+//         console.log(`Andrea ha la proprietà ${key} associata al valore ${value}`)
+//     }
+// }
 //_______________________________________________________________________________________________________________________________________________________________________
+
+//  TRASFORMARE GLI ESERCIZI PRECEDENTI USANDO FILTER-MAP-REDUCE
+
+//(1) Scrivere una funzione che prende in input un array di numeri e restituisce un array di stringhe in logica fizzBuzz
+
+const numbers = [3, 5, 15, 8, 12, 2];
+
+function convertArrayInFizzBuzzMap(array){
+    const tempArray = array.map((element) => {
+        let newNumber = [''];
+        if(element % 3 === 0 && element % 5 === 0){
+           newNumber = "FizzBuzz"
+        }else if(element % 3 === 0){
+            newNumber =  "Fizz"
+        }else if(element % 5 === 0){
+            newNumber = "Buzz"
+        }else{
+            newNumber += element
+        } 
+        return newNumber;
+    })
+    return tempArray;
+}
+
+
+
+// console.log(convertArrayInFizzBuzz(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
+console.log(convertArrayInFizzBuzzMap(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
+
+
+
+//(2) Scrivere una funzione che prende in input un array di numeri e restituisce un array di numeri in cui i positivi sono trasformati in negativi e viceversa
+const numbers1 = [-3, 5, 15, -8, 12, 2, 0];
+
+console.log(numbers1.map((element)=> element * -1))
+
+//(3) Scrivere una funzione che prende in input un array di stringhe e restuisce un array di numeri con la lunghezza delle stringhe 
+
+const strings = ['pippo', 'pluto', 'qui'];
+
+console.log(strings.map((element)=> element.length))
+
+//(4) Scrivere una funzione che prende in input un array di stringhe e restisuice solo quelle che contengono la lettera z
+
+const strings2 = ['pippo', 'pluto', 'qui', 'zapotec'];
+
+console.log(strings2.filter((element)=>element.includes('z')))
+
+//(5) Scrivere una funzione che prende in input un array di numeri e restituisce tutti i numeri pari 
+
+const numbers2 = [-3, 5, 15, -8, 12, 2, 0];
+console.log(numbers2.filter((element)=>element % 2===0))
+
+//(6) Scrivere una funzione che dato un array di stringhe restituisca una stringa composta dalle iniziali 
+
+const strings3 = ['pippo', 'osvaldo', 'paperino'];
+
+function sumFirstChar(array){
+  
+    let tempString = array.reduce((accumulator, element) => accumulator + element[0], '')
+
+    return tempString;
+
+}
+console.log(sumFirstChar(strings3)) //'pop'
+
+//non capito
+
+//(7) Scrivere una funzione che prende un array di numeri e restituisce il maggiore 
+
+const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
+const numbers4 = [-1, -5, -3]
+
+// function maxElement(array){
+//     let maxNumber = -Infinity;
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if(element > maxNumber){
+//             maxNumber = element;
+//         }
+//     }
+//     return maxNumber;
+// }
+// console.log(maxElement(numbers3)) //15
+
+
+function maxElement(array){
+  return array.reduce((accumulator, element) => Math.max(accumulator, element))
+}
+
+console.log(maxElement(numbers3)) //15
+
+
+
