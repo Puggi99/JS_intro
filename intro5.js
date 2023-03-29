@@ -138,7 +138,7 @@
 // FUNZIONE DI ORDINE SUPERIORE CON GLI ARRAY
 
 
-let numbers = [10, 2, 32, 4, 5]
+// let numbers = [10, 2, 32, 4, 5]
 // let squaredNumbers = []
 // for(let n of numbers){                                  // usare il comando "let n of" per controllare ogni elemento
 //     squaredNumbers.push(n*n)
@@ -176,22 +176,192 @@ let numbers = [10, 2, 32, 4, 5]
 // console.log(testArray.forEach(n => sum += n))
 
 
-let words = ["ciao", "pippo", "pluto", "paperino", "topolino", "ciao mondo"];
-let res = words.filter(n => n.length > 5)
-                .map(n=> n.length)
-                .forEach(l => console.log(l))
+// let words = ["ciao", "pippo", "pluto", "paperino", "topolino", "ciao mondo"];
+// let res = words.filter(n => n.length > 5)
+//                 .map(n=> n.length)
+//                 .forEach(l => console.log(l))
 
 
-for(let w of words) {
-    if(w.length < 6){
-        continue
-    }
-    let l = w.length
-    console.log(l)
+// for(let w of words) {
+//     if(w.length < 6){
+//         continue
+//     }
+//     let l = w.length
+//     console.log(l)
+// }
+
+
+// concetti sulle higher order functions
+// 1) le higher order functions sono abbastanza strane;
+// 2) la reduce è la più strana in assoluto;
+// 3) esistono molti linguaggi di programmazione che ne fanno tranquillamente a meno;
+// 4) esistono molti programmatore che ne fanno tranquillamente a meno (anche programmatori molto bravi);
+// 5) ogni volta che qualcuno dei ragazzi che lavora con me deve scrivere una reduce non banale mi chiama per conforto;
+// 6) purtroppo dovete imparare almeno a leggerle;
+
+
+
+
+// Higher order function
+// 1) può avere sia in input che in output una funzione
+// 2)console.log([3,5,12,1].map((numero) => numero *2)
+// 3)
+
+// function loopNumbersFrom1To15AndApplyAFunction(myStrangeFunction, mySecondStrangeFunction){
+//     for (let i = 0; i < 16; i++) {
+//         const resultOfStrangeFunction = myStrangeFunction(i);
+//         mySecondStrangeFunction(resultOfStrangeFunction)
+//     }
+// }
+
+// function divideBy2IfEven(myNumber){
+//     if(myNumber % 2 === 0){
+//         return myNumber / 2;
+        
+//     }
+//     return myNumber
+// }
+
+// // function logIfGreaterThan4(myNumber){
+// //     if(myNumber > 4){
+// //     console.log(myNumber);
+// //     }
+// // }
+
+// // loopNumbersFrom1To15AndApplyAFunction(divideBy2IfEven,logIfGreaterThan4)
+
+// // 4)
+
+
+
+
+// function divideBy2IfEvenPart2(myNumber){
+//     if(myNumber % 2 === 0){
+//         const element = myNumber / 2;
+        
+//     }
+//     return element
+// }
+
+// let numbers = [3,4,6,9,12,15,13]
+
+// function divideBy3(n, divideBy2IfEvenPart2){
+//     let result = 0;
+//     for (let i = 0; i < n.length; i++) {
+//         const element = n[i];
+//         result += divideBy2IfEvenPart2.element(n/3)
+//     }return result
+// }
+
+// console.log(divideBy3(numbers))
+
+
+
+// function multiply(selectedNumber){
+//     let result =  selectedNumber * myNumber;
+//     return result;
+// }
+
+
+// function createMultiplicator(myNumber){
+//     function multiply(selectedNumber){
+//         return selectedNumber * myNumber;
+//     }
+// }
+
+// return (selectedNumber) => selectedNumber *myNumber;
+
+//_______________________________________________________________________________________________________________________________________________________________________
+
+
+// 5)
+
+// function add1(selectedNumber){
+//     return selectedNumber+1;
+// }
+
+// const add2 = applyTwice(add1);
+
+// function applyTwice (myFunction){                                        // funzione che prende un'altra funzione e la modifica
+//     return(input) => myFunction(myFunction(input))
+// }
+
+// console.log(add2(5)) // 7
+
+// const add4 = applyTwice(add2)
+// console.log(add4(4))
+
+// console.log(applyTwice(applyTwice(add1))(10)); // 14
+
+
+//_______________________________________________________________________________________________________________________________________________________________________
+
+
+// TUTTI I CICLI IN JAVASCRIPT
+// WHILE
+
+const numbers = [9,8,7,1,2,3]
+// let i = 0;
+// while (i < numbers.length){
+//     const element = numbers[i];
+//     console.log(element);
+//     i++
+// }
+
+// FOR
+
+// for (let i = 0; i < numbers.length; i++) {
+//     const element = numbers[i];
+//     console.log(element)
+    
+// }
+    
+// DO WHILE
+
+// let j = 0;
+// do {
+//     const element = numbers[j];
+//     console.log(element);
+//     j++
+
+// }while(j<numbers.length);
+
+// FOR OF
+
+// for (const element of numbers) {
+//     console.log(element)
+// }
+
+
+// FOR EACH
+
+numbers.forEach((element) => console.log(element));
+
+
+// MAP
+numbers.map((element) => console.log(element *2));
+// FILTER
+numbers.filter((element)=> console.log(element % 2 === 0));
+// REDUCE
+numbers.reduce((previousElement, currentElement)=> previousElement + currentElement, 0);                   // lo 0 nella reduce è il valore iniziale
+
+const strings = ['qui','quo','qua']
+strings.reduce((previousElement,currentElement) => previousElement + currentElement, '');
+
+// FOR IN 
+// cicla gli oggetti
+
+const Andrea = {
+    name: 'Andrea',
+    surname: 'Asioli',
+    hasADog: true,
+    yob: 1978,
 }
 
-
-
-
-
-
+for (const key in Andrea) {
+    if (Object.hasOwnProperty.call(Andrea, key)) {
+        const value = Andrea[key];
+        console.log(`Andrea ha la proprietà ${key} associata al valore ${value}`)
+    }
+}
+//_______________________________________________________________________________________________________________________________________________________________________
