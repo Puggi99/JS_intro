@@ -431,7 +431,6 @@ function sumFirstChar(array){
 }
 console.log(sumFirstChar(strings3)) //'pop'
 
-//non capito
 
 //(7) Scrivere una funzione che prende un array di numeri e restituisce il maggiore 
 
@@ -456,6 +455,20 @@ function maxElement(array){
 }
 
 console.log(maxElement(numbers3)) //15
+
+
+
+
+
+//
+
+// Linked List
+// invece di essere messi tutti in una scatola, sono tante scatole collegate tra loro, il primo elemento conosce solo il secondo, quindi ognuna conosce solo il successivo.
+// La linked list ha come vantaggio rispetto ad un array è che è velocissima quando si devono modificare gli elementi
+// inoltre il primo elemento potrebbe avere dei "child", quindi potrebbe avere più di un successivo e questa cosa si chiama "tree"
+// Grafo = quando tutti gli elementi possono collegarsi fra loro, superando il concetto di collegamento solo con il successivo, questi elementi si chiamano "nodes" e l'operazione si chiama "Grafo"
+
+
 
 
 
